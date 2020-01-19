@@ -90,18 +90,7 @@ public class Producto {
 		return cantidadAVender <= cantidadEnStock;
 	}
 	
-	
-	//Metodo que permite comprar un producto en Stock. Si no tiene stock disponible nos devuelve no tiene stock, si tiene stock lo remueve de la lista de stock.
-	public void venderUnProducto(Integer cantidadAVender) {
-        if (!tieneStockDisponible(cantidadAVender)) {
-            System.out.println("No nos queda stock disponible de " + nombre);
-        } else {
-            System.out.println("Usted se lleva un " + nombre);
-        }
-        System.out.println("La cantidad en stock del producto antes de la compra es " + cantidadEnStock);
-        cantidadEnStock = cantidadEnStock - cantidadAVender;
-        System.out.println("Se vendieron " + cantidadAVender + " unidades, y el nuevo stock del producto es: "+ cantidadEnStock);
-    }
+
 	
 
 }
