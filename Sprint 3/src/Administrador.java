@@ -13,9 +13,9 @@ public class Administrador extends Usuario {
 	
 	
 	// Crear un nuevo producto en el ECOMMERCE
-	public Producto crearProducto (String unNombre, Integer unCodigo, String unaDescripcion, Double unPrecio, Integer unaCantidadEnStock) {
+	public Producto crearProducto (String unNombre, Integer unCodigo, String unaDescripcion, Double unPrecio, Integer unaCantidadEnStock, String unaCategoria) {
 		if(this.getEstadoDeConexion()==true) {
-		Producto unProductoNuevo = new Producto (unNombre, unCodigo, unaDescripcion, unPrecio, unaCantidadEnStock);
+		Producto unProductoNuevo = new Producto (unNombre, unCodigo, unaDescripcion, unPrecio, unaCantidadEnStock, unaCategoria);
 		System.out.println("Se creo el producto "+ unProductoNuevo.getNombre()+ " con un precio " + unProductoNuevo.getPrecio() + " Y una cantidad de " + unProductoNuevo.getCantidadEnStock());
 		return unProductoNuevo;
 		} else {
@@ -48,13 +48,11 @@ public class Administrador extends Usuario {
 	//}
 	
 	//Cambiar el precio del producto
-	public void cambiarPrecio(Integer codigo,Double nuevoPrecio) {
+	public void cambiarPrecio(Producto unProducto,Double nuevoPrecio) {
 		if(this.getEstadoDeConexion()==true) {
-		Producto productoEncontrado = buscarProducto(codigo);
-		Producto productoAModificar = productoEncontrado;
-		System.out.println("Se modificara el precio del producto " + productoAModificar.getNombre() + " el precio a modificar es " + productoAModificar.getPrecio());
-		productoAModificar.setPrecio(nuevoPrecio);
-		System.out.println("El nuevo precio es "+ productoAModificar.getPrecio());
+		System.out.println("Se modificara el precio del producto " + unProducto.getNombre() + " el precio a modificar es " + unProducto.getPrecio());
+		unProducto.setPrecio(nuevoPrecio);
+		System.out.println("El nuevo precio es "+ unProducto.getPrecio());
 		}else {
 			System.out.println("Debe iniciar sesion para administrar stock");
 		}
@@ -62,13 +60,11 @@ public class Administrador extends Usuario {
 	
 	//Cambiar el stock del producto
 	
-	public void cambiarStock (Integer codigo, Integer nuevoStock) {
+	public void cambiarStock (Producto unProducto, Integer nuevoStock) {
 		if(this.getEstadoDeConexion()== true) {
-		Producto productoEncontrado = buscarProducto(codigo);
-		Producto productoAModificar = productoEncontrado;
-		System.out.println("Se modificara la cantidad del producto " + productoAModificar.getNombre() + " la cantidad actual es " + productoAModificar.getCantidadEnStock());
-		productoAModificar.setCantidadEnStock(nuevoStock);
-		System.out.println("La nueva cantidad es "+ productoAModificar.getCantidadEnStock());
+		System.out.println("Se modificara la cantidad del producto " + unProducto.getNombre() + " la cantidad actual es " + unProducto.getCantidadEnStock());
+		unProducto.setCantidadEnStock(nuevoStock);
+		System.out.println("La nueva cantidad es "+ unProducto.getCantidadEnStock());
 		}else {
 			System.out.println("Debe iniciar sesion para administrar stock");
 		}

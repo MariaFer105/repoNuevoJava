@@ -7,23 +7,27 @@ public class Producto {
 	private String descripcion;
 	private Double precio;
 	private Integer cantidadEnStock;
+	private String categoria;
 
 	
 	
 	//Constructor
-	public Producto(String nombre, Integer codigo, String descripcion, Double precio, Integer cantidadEnStock) {
+
+	public Producto(String nombre, Integer codigo, String descripcion, Double precio, Integer cantidadEnStock,
+			String categoria) {
 		this.nombre = nombre;
 		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.cantidadEnStock = cantidadEnStock;
+		this.categoria = categoria;
 	}
-
 	//Getters
 	
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -36,10 +40,15 @@ public class Producto {
 	public Integer getCantidadEnStock() {
 		return cantidadEnStock;
 	}
-
+	public String getCategoria() {
+		return categoria;
+	}
+	
 	
 // Setters
 	
+	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -55,7 +64,11 @@ public class Producto {
 	public void setCantidadEnStock(Integer cantidadEnStock) {
 		this.cantidadEnStock = cantidadEnStock;
 	}
-
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	
+	
 	
 	public boolean equals(Object productoAcomparar)
 	{
