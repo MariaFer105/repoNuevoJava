@@ -20,7 +20,7 @@ public class Main {
 		//adm1.cambiarPrecio(123, 44.0);
 		///adm1.cambiarStock(123, 2);
 		cliente1.login("vero@vero", "verito");
-		cliente1.agregarUnProductoAlCarrito(producto1, 15);
+		cliente1.agregarUnProductoAlCarrito(producto1, 11);
 
 
 	}
