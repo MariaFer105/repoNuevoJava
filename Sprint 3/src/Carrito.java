@@ -42,7 +42,23 @@ public class Carrito {
         return suma;
     }
 	
+	public void agregarUnProductoAlCarrito (Producto unProducto, Integer cantidadAComprar) {
+			if( unProducto.getCantidadEnStock() >= cantidadAComprar) {
+				Integer nuevoStock = unProducto.getCantidadEnStock()-cantidadAComprar;
+				unProducto.setCantidadEnStock(nuevoStock);
+				listaDeProductosAComprar.add(unProducto);
+				System.out.println("Se agregaron "+ cantidadAComprar + " del producto " + unProducto.getNombre() + " a la lista de productos a comprar");
+			}else {
+			System.out.println("No hay suficiente stock del Producto");
+			}
+		}
 	
 	
 	
-}
+	}
+	
+	
+	
+	
+	
+
